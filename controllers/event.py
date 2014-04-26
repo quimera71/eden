@@ -226,7 +226,7 @@ def event_rheader(r):
                 tabs.append((T("Human Resources"), "human_resource"))
             if settings.has_module("asset"):
                 tabs.append((T("Assets"), "asset"))
-            tabs.append((T("Facilities"), "site"))
+            tabs.append((T("DropOff Sites"), "site"))
             tabs.append((T("Map Configuration"), "config"))
             rheader_tabs = s3_rheader_tabs(r, tabs)
 

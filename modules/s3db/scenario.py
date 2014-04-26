@@ -128,7 +128,7 @@ class S3ScenarioModel(S3Model):
                                     "autocomplete": "name",
                                     "autodelete": False,
                                    },
-                       # Facilities
+                       # DropOff Sites
                        scenario_site="scenario_id",
                        # Organisations
                        org_organisation={"link": "scenario_organisation",
@@ -393,7 +393,7 @@ class S3ScenarioOrganisationModel(S3Model):
 # =============================================================================
 class S3ScenarioSiteModel(S3Model):
     """
-        Link Sites (Facilities) to Scenarios
+        Link Sites (DropOff Sites) to Scenarios
     """
 
     names = ["scenario_site"]
@@ -403,7 +403,7 @@ class S3ScenarioSiteModel(S3Model):
         T = current.T
 
         # ---------------------------------------------------------------------
-        # Facilities
+        # DropOff Sites
         # @ToDo: Search Widget
 
         tablename = "scenario_site"
@@ -413,15 +413,15 @@ class S3ScenarioSiteModel(S3Model):
                           *s3_meta_fields())
 
         current.response.s3.crud_strings[tablename] = Storage(
-            label_create = T("Create Facility"),
-            title_display = T("Facility Details"),
-            title_list = T("Facilities"),
-            title_update = T("Edit Facility"),
-            label_list_button = T("List Facilities"),
-            label_delete_button = T("Remove Facility from this scenario"),
-            msg_record_created = T("Facility added"),
-            msg_record_modified = T("Facility updated"),
-            msg_record_deleted = T("Facility removed"),
+            label_create = T("Create DropOff Site"),
+            title_display = T("DropOff Site Details"),
+            title_list = T("DropOff Sites"),
+            title_update = T("Edit DropOff Site"),
+            label_list_button = T("List DropOff Sites"),
+            label_delete_button = T("Remove DropOff Site from this scenario"),
+            msg_record_created = T("DropOff Site added"),
+            msg_record_modified = T("DropOff Site updated"),
+            msg_record_deleted = T("DropOff Site removed"),
             msg_list_empty = T("No facilities currently registered in this scenario"))
 
         # ---------------------------------------------------------------------

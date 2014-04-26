@@ -64,7 +64,7 @@ def scenario_rheader(r, tabs=[]):
             if settings.has_module("asset"):
                 tabs.append((T("Assets"), "asset"))
             tabs.append((T("Organizations"), "organisation"))
-            tabs.append((T("Facilities"), "site"))
+            tabs.append((T("DropOff Sites"), "site"))
             if settings.has_module("project"):
                 tabs.append((T("Tasks"), "task"))
             tabs.append((T("Map Configuration"), "config"))

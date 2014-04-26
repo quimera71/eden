@@ -1523,7 +1523,7 @@ class S3EventMapModel(S3Model):
 # =============================================================================
 class S3EventSiteModel(S3Model):
     """
-        Link Sites (Facilities) to Incidents
+        Link Sites (DropOff Sites) to Incidents
     """
 
     names = ["event_site"]
@@ -1533,12 +1533,14 @@ class S3EventSiteModel(S3Model):
         T = current.T
 
         # ---------------------------------------------------------------------
-        # Facilities
+        # DropOff Sites
         # @ToDo: Search Widget
         tablename = "event_site"
         self.define_table(tablename,
                           self.event_incident_id(),
                           self.org_site_id,
+###                          s3base.s3_date("start_date",label=T("Start Date")),
+###                          s3base.s3_date("end_date",label=T("End Date")),
                           *s3_meta_fields())
 
         # @todo: make lazy_table
@@ -1546,16 +1548,16 @@ class S3EventSiteModel(S3Model):
         table.site_id.readable = table.site_id.writable = True
 
         current.response.s3.crud_strings[tablename] = Storage(
-            label_create = T("Assign Facility"),
-            title_display = T("Facility Details"),
-            title_list = T("Facilities"),
-            title_update = T("Edit Facility"),
-            label_list_button = T("List Facilities"),
-            label_delete_button = T("Remove Facility from this incident"),
-            msg_record_created = T("Facility added"),
-            msg_record_modified = T("Facility updated"),
-            msg_record_deleted = T("Facility removed"),
-            msg_list_empty = T("No Facilities currently registered in this incident"))
+            label_create = T("Assign DropOff Site"),
+            title_display = T("DropOff Site Details"),
+            title_list = T("DropOff Sites"),
+            title_update = T("Edit DropOff Site"),
+            label_list_button = T("List DropOff Sites"),
+            label_delete_button = T("Remove DropOff Site from this incident"),
+            msg_record_created = T("DropOff Site added"),
+            msg_record_modified = T("DropOff Site updated"),
+            msg_record_deleted = T("DropOff Site removed"),
+            msg_list_empty = T("No DropOff Sites currently registered in this incident"))
 
         # Pass names back to global scope (s3.*)
         return dict()
